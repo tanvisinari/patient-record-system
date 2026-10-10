@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CareSync</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" defer></script>
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">+</span>
+            <span>CareSync<span class="brand-dot">.</span></span>
+        </a>
+
+        <p class="sidebar-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="#records" class="nav-link" data-page="records">
+                <span>▤</span> Medical Records
+            </a>
+            <a href="#appointments" class="nav-link" data-page="appointments">
+                <span>▦</span> Appointments
+            </a>
+            <a href="#profile" class="nav-link" data-page="profile">
+                <span>♙</span> My Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <span class="help-icon">♡</span>
+                <strong>Take care of yourself.</strong>
+                <p>Your health journey matters.</p>
+            </div>
+
+            <a href="index.html" class="logout-link">
+                <span>↪</span> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <div>
+                <p class="topbar-label">PATIENT PORTAL</p>
+                <p class="topbar-subtitle">Your personal health space</p>
+            </div>
+
+            <div class="profile-chip">
+                <div class="avatar">P</div>
+                <div>
+                    <strong>Patient</strong>
+                    <p>Patient account</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+
+            <section class="dashboard-page" id="dashboard">
+                <div class="dashboard-welcome">
+                    <div>
+                        <span class="eyebrow">YOUR HEALTH OVERVIEW</span>
+                        <h1>Welcome back!</h1>
+                        <p>Here's an overview of your healthcare activity.</p>
+                    </div>
+                    <div class="welcome-mark">✚</div>
+                </div>
+
+                <div class="summary-grid">
+                    <article class="summary-card">
+                        <div class="summary-icon mint">▤</div>
+                        <p>Medical Records</p>
+                        <h2>—</h2>
+                        <span>Records will appear here</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <div class="summary-icon peach">▦</div>
+                        <p>Upcoming Appointments</p>
+                        <h2>—</h2>
+                        <span>Appointment details pending</span>
+                    </article>
+
+                    <article class="summary-card">
+                        <div class="summary-icon lavender">♡</div>
+                        <p>Profile Status</p>
+                        <h2>—</h2>
+                        <span>Complete your profile details</span>
+                    </article>
+                </div>
+
+                <div class="dashboard-panels">
+                    <section class="content-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Upcoming Appointments</h2>
+                                <p>Keep track of your scheduled visits.</p>
+                            </div>
+                            <button class="small-link" data-open="appointments">
+                                View all →
+                            </button>
+                        </div>
+
+                        <div class="empty-state">
+                            <span class="empty-icon">▦</span>
+                            <h3>No appointments to display</h3>
+                            <p>Your appointment information will appear here once available.</p>
+                            <button class="btn btn-primary" data-open="appointments">
+                                View Appointments
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="content-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Recent Medical Records</h2>
+                                <p>Your health information in one place.</p>
+                            </div>
+                            <button class="small-link" data-open="records">
+                                View all →
+                            </button>
+                        </div>
+
+                        <div class="empty-state">
+                            <span class="empty-icon">♡</span>
+                            <h3>No records to display</h3>
+                            <p>Your medical record summaries will appear here.</p>
+                            <button class="btn btn-secondary" data-open="records">
+                                View Records
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section class="dashboard-page hidden" id="records">
+                <div class="page-heading">
+                    <span class="eyebrow">YOUR HEALTH INFORMATION</span>
+                    <h1>Medical Records</h1>
+                    <p>View your available medical history and record summaries.</p>
+                </div>
+
+                <section class="content-panel">
+                    <div class="empty-state">
+                        <span class="empty-icon">▤</span>
+                        <h3>Your records will appear here</h3>
+                        <p>Medical records will be loaded securely from the backend once it is connected.</p>
+                    </div>
+                </section>
+            </section>
+
+            <section class="dashboard-page hidden" id="appointments">
+                <div class="page-heading">
+                    <span class="eyebrow">YOUR HEALTH SCHEDULE</span>
+                    <h1>Appointments</h1>
+                    <p>Keep track of your upcoming healthcare visits.</p>
+                </div>
+
+                <section class="content-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Your Appointments</h2>
+                            <p>Your scheduled visits will be listed here.</p>
+                        </div>
+                        <button class="btn btn-primary" id="bookAppointmentBtn">
+                            + Book Appointment
+                        </button>
+                    </div>
+
+                    <div class="empty-state">
+                        <span class="empty-icon">▦</span>
+                        <h3>No appointments to display</h3>
+                        <p>Appointment details will appear here once available.</p>
+                    </div>
+
+                    <form id="appointmentForm" class="appointment-form hidden">
+                        <h3>Request an Appointment</h3>
+
+                        <label for="doctorName">Doctor / Department</label>
+                        <input id="doctorName" type="text" required
+                               placeholder="e.g. General Medicine">
+
+                        <label for="appointmentDate">Preferred Date</label>
+                        <input id="appointmentDate" type="date" required>
+
+                        <label for="appointmentReason">Reason for Visit</label>
+                        <textarea id="appointmentReason" rows="3" required
+                                  placeholder="Briefly describe the reason"></textarea>
+
+                        <button type="submit" class="btn btn-primary">
+                            Submit Request
+                        </button>
+                        <p id="appointmentMessage" role="status"></p>
+                    </form>
+                </section>
+            </section>
+
+            <section class="dashboard-page hidden" id="profile">
+                <div class="page-heading">
+                    <span class="eyebrow">YOUR PERSONAL INFORMATION</span>
+                    <h1>My Profile</h1>
+                    <p>View and manage your patient profile details.</p>
+                </div>
+
+                <section class="content-panel profile-panel">
+                    <div class="profile-large-avatar">P</div>
+                    <h2>Patient</h2>
+                    <p>Your registered details will appear here after account integration.</p>
+                    <p class="profile-note">This is a placeholder profile for the frontend preview.</p>
+                </section>
+            </section>
+
+        </div>
+
+        <footer class="dashboard-footer">
+            <span>CareSync © 2026</span>
+            <span>Your health. Your information. Your care.</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,2 +1,168 @@
-<!-- Patient Record System -->
-1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareSync | Patient Record System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="#" class="brand" id="homeLogo">
+            <span class="brand-icon">+</span>
+            <span>CareSync<span class="brand-dot">.</span></span>
+        </a>
+
+        <span class="nav-label">PATIENT PORTAL</span>
+    </header>
+
+    <main class="main-container">
+        <section class="welcome page-card" id="welcomePage">
+            <div class="welcome-content">
+                <span class="eyebrow">
+                    <span class="status-dot"></span>
+                    YOUR HEALTH, YOUR SPACE
+                </span>
+
+                <h1>Healthcare, made<br><span>simpler.</span></h1>
+
+                <p class="hero-description">
+                    Keep your medical records organized, manage appointments,
+                    and stay connected with your healthcare journey.
+                </p>
+
+                <div class="actions">
+                    <button type="button" class="btn btn-primary" id="loginBtn">
+                        Sign In <span>→</span>
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" id="registerBtn">
+                        Create Account
+                    </button>
+                </div>
+
+                <div class="trust-note">
+                    <span class="shield-icon">✓</span>
+                    <span>Your health information deserves care and privacy.</span>
+                </div>
+            </div>
+
+            <div class="visual-panel" aria-hidden="true">
+                <div class="medical-symbol">✚</div>
+
+                <div class="floating-card record-card">
+                    <span class="mini-icon">♡</span>
+                    <div>
+                        <strong>Your health records</strong>
+                        <p>Organized in one place</p>
+                    </div>
+                </div>
+
+                <div class="floating-card appointment-card">
+                    <span class="mini-icon calendar-icon">▦</span>
+                    <div>
+                        <strong>Appointments</strong>
+                        <p>Stay on top of your care</p>
+                    </div>
+                </div>
+
+                <div class="circle circle-one"></div>
+                <div class="circle circle-two"></div>
+            </div>
+        </section>
+
+        <section class="form-card page-card hidden" id="loginPage">
+            <div class="form-heading">
+                <span class="form-icon">↗</span>
+                <span class="eyebrow">WELCOME BACK</span>
+                <h2>Good to see you.</h2>
+                <p>Sign in to access your patient portal.</p>
+            </div>
+
+            <form id="loginForm">
+                <label for="loginEmail">Email address</label>
+                <input type="email" id="loginEmail"
+                       placeholder="you@example.com" autocomplete="email" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword"
+                       placeholder="Enter your password"
+                       autocomplete="current-password" required>
+
+                <button type="submit" class="btn btn-primary form-submit">
+                    Sign In <span>→</span>
+                </button>
+            </form>
+
+            <p class="switch-text">
+                New to CareSync?
+                <button type="button" class="text-btn" id="goRegister">
+                    Create an account
+                </button>
+            </p>
+
+            <button type="button" class="back-btn" id="backFromLogin">
+                ← Back to home
+            </button>
+        </section>
+
+        <section class="form-card page-card hidden" id="registerPage">
+            <div class="form-heading">
+                <span class="form-icon">＋</span>
+                <span class="eyebrow">GET STARTED</span>
+                <h2>Create your account.</h2>
+                <p>Set up your patient portal to get started.</p>
+            </div>
+
+            <form id="registerForm">
+                <label for="fullName">Full name</label>
+                <input type="text" id="fullName"
+                       placeholder="Enter your full name"
+                       autocomplete="name" required>
+
+                <label for="registerEmail">Email address</label>
+                <input type="email" id="registerEmail"
+                       placeholder="you@example.com"
+                       autocomplete="email" required>
+
+                <label for="registerPassword">Create password</label>
+                <input type="password" id="registerPassword"
+                       placeholder="At least 8 characters"
+                       autocomplete="new-password" minlength="8" required>
+
+                <label for="confirmPassword">Confirm password</label>
+                <input type="password" id="confirmPassword"
+                       placeholder="Re-enter your password"
+                       autocomplete="new-password" minlength="8" required>
+
+                <button type="submit" class="btn btn-primary form-submit">
+                    Create Account <span>→</span>
+                </button>
+            </form>
+
+            <p class="switch-text">
+                Already have an account?
+                <button type="button" class="text-btn" id="goLogin">
+                    Sign in
+                </button>
+            </p>
+
+            <button type="button" class="back-btn" id="backFromRegister">
+                ← Back to home
+            </button>
+        </section>
+
+        <p id="message" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="footer">
+        <span>CareSync © 2026</span>
+        <span>Care that stays connected.</span>
+    </footer>
+</body>
+</html>
